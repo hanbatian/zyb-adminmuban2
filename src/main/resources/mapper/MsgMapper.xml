@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hthyaq.zybadmin.mapper.MsgMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hthyaq.zybadmin.model.entity.Msg">
+        <id column="id" property="id" />
+        <result column="adcode" property="adcode" />
+        <result column="name" property="name" />
+        <result column="center" property="center" />
+        <result column="center1" property="center1" />
+        <result column="center2" property="center2" />
+        <result column="level" property="level" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, adcode, name, center, center1, center2, level
+    </sql>
+
+</mapper>
