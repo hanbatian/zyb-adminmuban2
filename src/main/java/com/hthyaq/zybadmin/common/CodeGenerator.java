@@ -17,7 +17,7 @@ import java.util.List;
  * 代码生成器
  */
 public class CodeGenerator {
-    public static String[] include = {"demo_course"};
+    public static String[] include = {"categoryOfDic"};
 
     public static void main(String[] args) {
         AutoGenerator mpg = new AutoGenerator();

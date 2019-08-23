@@ -5,6 +5,8 @@ import com.hthyaq.zybadmin.model.entity.Test;
 import com.hthyaq.zybadmin.service.TestService;
 import io.lettuce.core.Value;
 import io.lettuce.core.dynamic.annotation.Key;
+import org.apache.commons.io.FileUtils;
+import org.aspectj.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +38,9 @@ public class TestController {
 //创建一个空list集合
         ArrayList<Test> list = new ArrayList<>();
 //创建文件，找到文件，创建文件输入流，转换文件，创建文件读取流，将转换后的文件读取出来，创建缓存区，将读取后的文件放入缓冲区中
-        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(new File("201906area.txt")), "UTF-8"));
+//        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(new File("201906area.txt")), "UTF-8"));
+//hutool工具类，读取文件
+        BufferedReader br = new BufferedReader(new FileReader("201906area.txt"));
 //        创建空字符串池
         String line = "";
 //        从缓存区中循环读取每一条数据字符串，当读取的数据为空时，将不再读取

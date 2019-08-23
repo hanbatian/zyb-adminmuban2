@@ -44,14 +44,14 @@ public class MsgController {
         int code = 10000;
 //        将该常量放入下面网址中
         String s = HttpUtil.get("https://restapi.amap.com/v3/config/district?keywords=" + code + "&subdistrict=0&key=eadd710d0a0898b211ab62cee2e21b80");
-//        将json数据转换成对象
+//        将json数据转换成json对象
         JSONObject jo = JSONObject.parseObject(s);
-//        通过json对象获取数组的districts
+//        通过json对象获取districts的数组
         JSONArray ja = jo.getJSONArray("districts");
-        for (int i=0;i<ja.size();i++){
-            JSONObject jsonObject = ja.getJSONObject(i);
-        }
-//        获取数组中的每一个json对象
+//        for (int i=0;i<ja.size();i++){
+//            JSONObject jsonObject = ja.getJSONObject(i);
+//        }
+//        获取数组中0角标元素的json对象
         JSONObject jt = ja.getJSONObject(0);
 //        将json对象转换成json字符串，再将json转换成Javabean对象
         Msg msg1 = jt.toJavaObject(Msg.class);

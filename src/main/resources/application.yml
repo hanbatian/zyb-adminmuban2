@@ -81,5 +81,5 @@ mybatis-plus:
   global-config:
     banner: false
   mapper-locations: classpath:mapper/*.xml
-#  configuration:
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

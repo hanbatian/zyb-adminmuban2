@@ -1,6 +1,7 @@
 package com.hthyaq.zybadmin.controller;
 
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -39,14 +40,38 @@ public class DemoController {
     DemoCourseService demoCourseService;
 
     @PostMapping("/add")
+//    public boolean add(@RequestParam DemoData demoData){
+//       boolean flag1=true;
+//       boolean flag2=true;
+//        Demo demo = new Demo();
+//        BeanUtils.copyProperties(demoData,demo);
+//        flag1 = demoService.save(demo);
+//        List<DemoCourse> dataSource = demoData.getCourse().getDataSource();
+//        Integer id = demo.getId();
+//        if (ObjectUtil.length(dataSource)>0){
+//            dataSource.forEach(demoCourse -> demoCourse.setId(id));
+//            flag2 = demoCourseService.saveBatch(dataSource);
+//        }
+//        return flag1&&flag2;
+//    }
+//    事务写到service层
     public boolean add(@RequestBody DemoData demoData) {
         return demoService.savaDemo(demoData);
     }
 
     @GetMapping("/delete")
+//    public boolean delete(Integer id) {
+//        boolean flag1 = true;
+//        boolean flag2 = true;
+//        flag1 = demoService.removeById(id);
+//        QueryWrapper<DemoCourse> queryWrapper = new QueryWrapper<>();
+//        QueryWrapper<DemoCourse> demo_id = queryWrapper.eq("demo_id", id);
+//        demoCourseService.remove(demo_id);
+//        return flag1 && flag2;
+//    }
     public boolean delete(Integer id) {
-    return demoService.deleteDemo(id);
-    }
+            return demoService.deleteDemo(id);
+        }
 
     @GetMapping("/getById")
     public DemoData getById(Integer id) {
@@ -71,7 +96,7 @@ public class DemoController {
 
     @PostMapping("/edit")
     public boolean edit(@RequestBody DemoData demoData) {
-    return demoService.editDemo(demoData);
+        return demoService.editDemo(demoData);
     }
 
 
