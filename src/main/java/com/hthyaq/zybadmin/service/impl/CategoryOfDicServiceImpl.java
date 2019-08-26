@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author hk
- * @since 2019-08-23
+ * @since 2019-08-25
  */
 @Service
 public class CategoryOfDicServiceImpl extends ServiceImpl<CategoryOfDicMapper, CategoryOfDic> implements CategoryOfDicService {

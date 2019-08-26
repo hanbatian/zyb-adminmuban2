@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author hk
- * @since 2019-08-23
+ * @since 2019-08-25
  */
 public interface CategoryOfDicMapper extends BaseMapper<CategoryOfDic> {
 

@@ -11,11 +11,12 @@
         <result column="flag" property="flag" />
         <result column="men" property="men" />
         <result column="max" property="max" />
+        <result column="level" property="level" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, pid, topId, flag, men, max
+        id, name, pid, topId, flag, men, max, level
     </sql>
 
 </mapper>

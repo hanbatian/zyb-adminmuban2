@@ -1,6 +1,5 @@
 package com.hthyaq.zybadmin.model.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -11,17 +10,16 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 国民经济行业分类及职业病
+ * 岗位及工种
  * </p>
  *
  * @author hk
- * @since 2019-08-25
+ * @since 2019-08-26
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("categoryOfDic")
-public class CategoryOfDic implements Serializable {
+public class Work implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,9 +27,18 @@ public class CategoryOfDic implements Serializable {
     private Integer id;
 
     /**
-     * 行业分类
+     * 门类
      */
-    private String name;
+
+    @TableField("industyName")
+    private String industyName;
+
+    /**
+     * 大类
+     */
+
+    @TableField("postName")
+    private String postName;
 
     /**
      * 上级节点的id
@@ -45,22 +52,7 @@ public class CategoryOfDic implements Serializable {
     private Integer topId;
 
     /**
-     * 职业病
-     */
-    private String flag;
-
-    /**
-     * 门类
-     */
-    private String men;
-
-    /**
-     * 大类
-     */
-    private Integer max;
-
-    /**
-     * 级别
+     * 等级
      */
     private Integer level;
 

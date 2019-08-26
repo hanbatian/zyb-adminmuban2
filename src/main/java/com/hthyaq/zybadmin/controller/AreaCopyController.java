@@ -39,7 +39,7 @@ public class AreaCopyController {
         return areaCopyService.updateBatchById(list1);
     }
 
-    //    获取省，level等级为1
+    //    获取省，level等级为1\\\\\\
     @GetMapping("/update1")
     public boolean update1() {
         return areaCopyService.update1();

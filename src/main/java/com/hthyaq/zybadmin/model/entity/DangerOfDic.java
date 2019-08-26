@@ -11,7 +11,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 国民经济行业分类及职业病
+ * 职业病危害因素分类目录
  * </p>
  *
  * @author hk
@@ -20,8 +20,8 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("categoryOfDic")
-public class CategoryOfDic implements Serializable {
+@TableName("dangerOfDic")
+public class DangerOfDic implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,9 +29,15 @@ public class CategoryOfDic implements Serializable {
     private Integer id;
 
     /**
-     * 行业分类
+     * 职业病危害因素
      */
     private String name;
+
+    /**
+     * CAS 号
+     */
+    @TableField("casNum")
+    private String casNum;
 
     /**
      * 上级节点的id
@@ -39,30 +45,9 @@ public class CategoryOfDic implements Serializable {
     private Integer pid;
 
     /**
-     * 下级节点的id
+     * 类别
      */
-    @TableField("topId")
-    private Integer topId;
-
-    /**
-     * 职业病
-     */
-    private String flag;
-
-    /**
-     * 门类
-     */
-    private String men;
-
-    /**
-     * 大类
-     */
-    private Integer max;
-
-    /**
-     * 级别
-     */
-    private Integer level;
+    private Integer leibie;
 
 
 }
