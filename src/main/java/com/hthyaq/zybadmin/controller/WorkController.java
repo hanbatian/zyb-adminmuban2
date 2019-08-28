@@ -74,7 +74,9 @@ public class WorkController {
 
     @GetMapping("/tree")
     public List<TreeSelectData> tree() {
+//        大集合
         ArrayList<TreeSelectData> list5 = new ArrayList<>();
+//        第一层小集合
         ArrayList<TreeSelectData> list = new ArrayList<>();
         QueryWrapper<Work> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("pid", "-1");
