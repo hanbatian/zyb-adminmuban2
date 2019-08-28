@@ -13,34 +13,41 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
 import com.hthyaq.zybadmin.model.entity.CategoryOfDic;
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Array;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static java.nio.charset.Charset.*;
 
 public class ZZTest {
     public static void main(String[] args) {
-        int[] arrary = {323, 43, 433, 2, 5, 32, 45};
-        int max = getmax(arrary);
-        System.out.println(max);
-    }
+        ArrayList<Integer> list1 = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < 20; i++) {
+            int i1 = random.nextInt(50) + 1;
+            list1.add(i1);
+            ArrayList<Integer> list2 = getList2(list1);
+            System.out.println(list2.size());
+            for (int i2 = 0; i2 < list2.size(); i2++) {
 
-    public static int getmax(int[] arrary) {
-        int max = arrary[0];
-        for (int i = 0; i < arrary.length; i++) {
-            if (arrary[i] > max) {
-                max = arrary[i];
+                System.out.println(list2.get(i2));
             }
         }
-        return max;
+    }
+
+    public static ArrayList<Integer> getList2(ArrayList<Integer> list1) {
+        ArrayList<Integer> list2 = new ArrayList<>();
+        for (int i = 0; i < list1.size(); i++) {
+            if (list1.get(i)%2 == 0) {
+                list2.add(list1.get(i));
+            }
+        }
+        return list2;
     }
 }
